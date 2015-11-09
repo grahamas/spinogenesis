@@ -47,7 +47,7 @@ using namespace std;
  * It is meant to be similar to stdp_synapse_hom in NEST.
  *
  */
-class STDPwdConnection : public DuplexConnection
+class SpineSTDPwdConnection : public DuplexConnection
 {
 
 private:
@@ -90,21 +90,21 @@ public:
 
 	bool stdp_active;
 
-	STDPwdConnection(SpikingGroup * source, NeuronGroup * destination,
+	SpineSTDPwdConnection(SpikingGroup * source, NeuronGroup * destination,
 			TransmitterType transmitter=GLUT);
 
-	STDPwdConnection(SpikingGroup * source, NeuronGroup * destination,
+	SpineSTDPwdConnection(SpikingGroup * source, NeuronGroup * destination,
 			const char * filename,
 			AurynWeight lambda=1e-5,
 			AurynWeight maxweight=0.1 ,
 			TransmitterType transmitter=GLUT);
 
-	STDPwdConnection(SpikingGroup * source, NeuronGroup * destination,
+	SpineSTDPwdConnection(SpikingGroup * source, NeuronGroup * destination,
 			AurynWeight weight, AurynWeight sparseness=0.05,
 			AurynWeight lambda=0.01,
 			AurynWeight maxweight=100. ,
 			TransmitterType transmitter=GLUT,
-			string name = "STDPwdConnection" );
+			string name = "SpineSTDPwdConnection" );
 
 	void set_alpha(AurynWeight a);
 	void set_lambda(AurynWeight l);
@@ -114,7 +114,7 @@ public:
 
 	void set_max_weight(AurynWeight w);
 
-	virtual ~STDPwdConnection();
+	virtual ~SpineSTDPwdConnection();
 	virtual void finalize();
 	void free();
 

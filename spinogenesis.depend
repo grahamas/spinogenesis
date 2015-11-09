@@ -1,0 +1,554 @@
+# depslib dependency file v1.0
+1447022099 source:/home/grahams/git/spinogenesis/src/sim_spines.cpp
+	"auryn.h"
+
+1447006974 /home/grahams/git/auryn/src/auryn.h
+	<iostream>
+	<iomanip>
+	<stdlib.h>
+	<string>
+	<boost/program_options.hpp>
+	<boost/mpi/environment.hpp>
+	<boost/mpi/communicator.hpp>
+	<boost/mpi.hpp>
+	"auryn_global.h"
+	"auryn_definitions.h"
+	"System.h"
+	"SyncBuffer.h"
+	"Logger.h"
+	"SpikeDelay.h"
+	"LinearTrace.h"
+	"EulerTrace.h"
+	"Connection.h"
+	"SparseConnection.h"
+	"RateModulatedConnection.h"
+	"STDPConnection.h"
+	"STDPwdConnection.h"
+	"SymmetricSTDPConnection.h"
+	"STPConnection.h"
+	"ABSConnection.h"
+	"TripletConnection.h"
+	"DuplexConnection.h"
+	"TripletDecayConnection.h"
+	"IdentityConnection.h"
+	"IF2Group.h"
+	"AIF2Group.h"
+	"IafPscDeltaGroup.h"
+	"IFGroup.h"
+	"AIFGroup.h"
+	"CubaIFGroup.h"
+	"TIFGroup.h"
+	"SpikingGroup.h"
+	"NeuronGroup.h"
+	"PoissonGroup.h"
+	"ProfilePoissonGroup.h"
+	"StructuredPoissonGroup.h"
+	"CorrelatedPoissonGroup.h"
+	"FileModulatedPoissonGroup.h"
+	"AuditoryBeepGroup.h"
+	"StimulusGroup.h"
+	"FileInputGroup.h"
+	"Checker.h"
+	"RateChecker.h"
+	"Monitor.h"
+	"GabaMonitor.h"
+	"NmdaMonitor.h"
+	"AmpaMonitor.h"
+	"VoltageMonitor.h"
+	"SpikeMonitor.h"
+	"BinarySpikeMonitor.h"
+	"DelayedSpikeMonitor.h"
+	"RealTimeMonitor.h"
+	"RateMonitor.h"
+	"PopulationRateMonitor.h"
+	"StateMonitor.h"
+	"WeightSumMonitor.h"
+	"PatternMonitor.h"
+	"WeightPatternMonitor.h"
+	"WeightStatsMonitor.h"
+	"WeightMonitor.h"
+	"WeightMatrixMonitor.h"
+	"PoissonStimulator.h"
+	"PatternStimulator.h"
+
+1447006974 /home/grahams/git/auryn/src/auryn_global.h
+	"Logger.h"
+	"System.h"
+
+1447006974 /home/grahams/git/auryn/src/Logger.h
+	<iostream>
+	<iomanip>
+	<fstream>
+	<sstream>
+	<string>
+	<time.h>
+
+1447006974 /home/grahams/git/auryn/src/System.h
+	"auryn_definitions.h"
+	"SpikingGroup.h"
+	"Connection.h"
+	"Monitor.h"
+	"Checker.h"
+	"SyncBuffer.h"
+	<ctime>
+	<vector>
+	<boost/mpi.hpp>
+	<boost/progress.hpp>
+
+1447006974 /home/grahams/git/auryn/src/auryn_definitions.h
+	<iostream>
+	<iomanip>
+	<string>
+	<cmath>
+	<cstdlib>
+	<list>
+	<exception>
+	<limits>
+	<x86intrin.h>
+	<immintrin.h>
+	<boost/mpi.hpp>
+	<boost/archive/text_oarchive.hpp>
+	<boost/archive/text_iarchive.hpp>
+	<boost/archive/binary_oarchive.hpp>
+	<boost/archive/binary_iarchive.hpp>
+	<boost/serialization/vector.hpp>
+	<boost/serialization/map.hpp>
+	<boost/random/mersenne_twister.hpp>
+	<boost/random/variate_generator.hpp>
+	<boost/random/normal_distribution.hpp>
+	"Logger.h"
+
+1447006974 /home/grahams/git/auryn/src/SpikingGroup.h
+	"auryn_definitions.h"
+	"SpikeDelay.h"
+	"EulerTrace.h"
+	"LinearTrace.h"
+	<vector>
+	<map>
+
+1447006974 /home/grahams/git/auryn/src/SpikeDelay.h
+	"auryn_definitions.h"
+	<vector>
+	<boost/serialization/utility.hpp>
+	<boost/serialization/split_member.hpp>
+
+1447006974 /home/grahams/git/auryn/src/EulerTrace.h
+	"auryn_definitions.h"
+
+1447006974 /home/grahams/git/auryn/src/LinearTrace.h
+	"auryn_definitions.h"
+
+1447006974 /home/grahams/git/auryn/src/Connection.h
+	<string>
+	"auryn_definitions.h"
+	"SpikingGroup.h"
+	"NeuronGroup.h"
+
+1447006974 /home/grahams/git/auryn/src/NeuronGroup.h
+	"auryn_definitions.h"
+	"SpikingGroup.h"
+	<map>
+	<fstream>
+	<sstream>
+	<boost/random/mersenne_twister.hpp>
+	<boost/random/variate_generator.hpp>
+	<boost/random/normal_distribution.hpp>
+
+1447006974 /home/grahams/git/auryn/src/Monitor.h
+	"auryn_definitions.h"
+	<fstream>
+	<string>
+
+1447006974 /home/grahams/git/auryn/src/Checker.h
+	"auryn_definitions.h"
+	"SpikingGroup.h"
+
+1447006974 /home/grahams/git/auryn/src/SyncBuffer.h
+	"auryn_definitions.h"
+	"SpikeDelay.h"
+	<vector>
+	<boost/mpi.hpp>
+	<boost/progress.hpp>
+	<mpi.h>
+
+1447006974 /home/grahams/git/auryn/src/SparseConnection.h
+	"auryn_definitions.h"
+	"Connection.h"
+	"System.h"
+	"ComplexMatrix.h"
+	<sstream>
+	<fstream>
+	<stdio.h>
+	<algorithm>
+	<boost/random/mersenne_twister.hpp>
+	<boost/random/uniform_int.hpp>
+	<boost/random/variate_generator.hpp>
+	<boost/random/exponential_distribution.hpp>
+	<boost/random/normal_distribution.hpp>
+	<boost/random/lognormal_distribution.hpp>
+
+1447006974 /home/grahams/git/auryn/src/ComplexMatrix.h
+	"auryn_global.h"
+	"auryn_definitions.h"
+	<string.h>
+	<boost/serialization/utility.hpp>
+	<boost/serialization/split_member.hpp>
+
+1447006974 /home/grahams/git/auryn/src/RateModulatedConnection.h
+	"auryn_definitions.h"
+	"SparseConnection.h"
+	"SimpleMatrix.h"
+	<boost/random/mersenne_twister.hpp>
+	<boost/random/uniform_int.hpp>
+	<boost/random/variate_generator.hpp>
+	<boost/random/exponential_distribution.hpp>
+
+1447006974 /home/grahams/git/auryn/src/SimpleMatrix.h
+	"auryn_global.h"
+	<string.h>
+	<boost/serialization/utility.hpp>
+	<boost/serialization/split_member.hpp>
+
+1447006974 /home/grahams/git/auryn/src/STDPConnection.h
+	"auryn_definitions.h"
+	"DuplexConnection.h"
+	"EulerTrace.h"
+	"LinearTrace.h"
+	"SpikeDelay.h"
+
+1447006974 /home/grahams/git/auryn/src/DuplexConnection.h
+	"auryn_definitions.h"
+	"SparseConnection.h"
+	"SimpleMatrix.h"
+	"ComplexMatrix.h"
+	<boost/random/mersenne_twister.hpp>
+	<boost/random/uniform_int.hpp>
+	<boost/random/variate_generator.hpp>
+	<boost/random/exponential_distribution.hpp>
+
+1447006974 /home/grahams/git/auryn/src/STDPwdConnection.h
+	"auryn_definitions.h"
+	"DuplexConnection.h"
+	"EulerTrace.h"
+	"LinearTrace.h"
+	"SpikeDelay.h"
+
+1447006974 /home/grahams/git/auryn/src/SymmetricSTDPConnection.h
+	"auryn_definitions.h"
+	"DuplexConnection.h"
+	"EulerTrace.h"
+	"LinearTrace.h"
+
+1447006974 /home/grahams/git/auryn/src/STPConnection.h
+	"auryn_definitions.h"
+	"SparseConnection.h"
+
+1447006974 /home/grahams/git/auryn/src/ABSConnection.h
+	"auryn_definitions.h"
+	"DuplexConnection.h"
+	"EulerTrace.h"
+
+1447006974 /home/grahams/git/auryn/src/TripletConnection.h
+	"auryn_definitions.h"
+	"DuplexConnection.h"
+	"EulerTrace.h"
+	"LinearTrace.h"
+	"SpikeDelay.h"
+
+1447006974 /home/grahams/git/auryn/src/TripletDecayConnection.h
+	"auryn_definitions.h"
+	"TripletConnection.h"
+	"EulerTrace.h"
+
+1447006974 /home/grahams/git/auryn/src/IdentityConnection.h
+	"auryn_definitions.h"
+	"Connection.h"
+	"System.h"
+	<sstream>
+	<fstream>
+	<stdio.h>
+	<boost/random/mersenne_twister.hpp>
+	<boost/random/uniform_int.hpp>
+	<boost/random/variate_generator.hpp>
+	<boost/random/exponential_distribution.hpp>
+	<boost/random/normal_distribution.hpp>
+
+1447006974 /home/grahams/git/auryn/src/IF2Group.h
+	"auryn_definitions.h"
+	"NeuronGroup.h"
+	"System.h"
+
+1447006974 /home/grahams/git/auryn/src/AIF2Group.h
+	"auryn_definitions.h"
+	"AIFGroup.h"
+	"System.h"
+
+1447006974 /home/grahams/git/auryn/src/AIFGroup.h
+	"auryn_definitions.h"
+	"NeuronGroup.h"
+	"System.h"
+
+1447006974 /home/grahams/git/auryn/src/IafPscDeltaGroup.h
+	"auryn_definitions.h"
+	"NeuronGroup.h"
+	"System.h"
+
+1447006974 /home/grahams/git/auryn/src/IFGroup.h
+	"auryn_definitions.h"
+	"NeuronGroup.h"
+	"System.h"
+
+1447006974 /home/grahams/git/auryn/src/CubaIFGroup.h
+	"auryn_definitions.h"
+	"NeuronGroup.h"
+	"System.h"
+
+1447006974 /home/grahams/git/auryn/src/TIFGroup.h
+	"auryn_definitions.h"
+	"NeuronGroup.h"
+	"System.h"
+
+1447006974 /home/grahams/git/auryn/src/PoissonGroup.h
+	"auryn_definitions.h"
+	"System.h"
+	"SpikingGroup.h"
+	<boost/random/mersenne_twister.hpp>
+	<boost/random/uniform_int.hpp>
+	<boost/random/variate_generator.hpp>
+	<boost/random/exponential_distribution.hpp>
+
+1447006974 /home/grahams/git/auryn/src/ProfilePoissonGroup.h
+	"auryn_definitions.h"
+	"System.h"
+	"SpikingGroup.h"
+	<boost/random/mersenne_twister.hpp>
+	<boost/random/uniform_int.hpp>
+	<boost/random/variate_generator.hpp>
+	<boost/random/exponential_distribution.hpp>
+
+1447006974 /home/grahams/git/auryn/src/StructuredPoissonGroup.h
+	"auryn_definitions.h"
+	"System.h"
+	"SpikingGroup.h"
+	"PoissonGroup.h"
+	<boost/random/mersenne_twister.hpp>
+	<boost/random/uniform_int.hpp>
+	<boost/random/variate_generator.hpp>
+	<boost/random/exponential_distribution.hpp>
+
+1447006974 /home/grahams/git/auryn/src/CorrelatedPoissonGroup.h
+	"auryn_definitions.h"
+	"System.h"
+	"SpikingGroup.h"
+	<boost/random/mersenne_twister.hpp>
+	<boost/random/uniform_int.hpp>
+	<boost/random/variate_generator.hpp>
+
+1447006974 /home/grahams/git/auryn/src/FileModulatedPoissonGroup.h
+	"auryn_definitions.h"
+	"System.h"
+	"SpikingGroup.h"
+	"PoissonGroup.h"
+	<boost/random/mersenne_twister.hpp>
+	<boost/random/uniform_int.hpp>
+	<boost/random/variate_generator.hpp>
+	<boost/random/exponential_distribution.hpp>
+
+1447006974 /home/grahams/git/auryn/src/AuditoryBeepGroup.h
+	"auryn_definitions.h"
+	"System.h"
+	"SpikingGroup.h"
+	"ProfilePoissonGroup.h"
+	<boost/random/mersenne_twister.hpp>
+	<boost/random/uniform_int.hpp>
+	<boost/random/variate_generator.hpp>
+	<boost/random/exponential_distribution.hpp>
+
+1447006974 /home/grahams/git/auryn/src/StimulusGroup.h
+	"auryn_definitions.h"
+	"System.h"
+	"SpikingGroup.h"
+	<boost/random/mersenne_twister.hpp>
+	<boost/random/uniform_01.hpp>
+	<boost/random/uniform_real.hpp>
+	<boost/random/uniform_int.hpp>
+	<boost/random/exponential_distribution.hpp>
+	<boost/random/normal_distribution.hpp>
+	<boost/random/variate_generator.hpp>
+
+1447006974 /home/grahams/git/auryn/src/FileInputGroup.h
+	<fstream>
+	<sstream>
+	"auryn_definitions.h"
+	"System.h"
+	"SpikingGroup.h"
+
+1447006974 /home/grahams/git/auryn/src/RateChecker.h
+	"auryn_definitions.h"
+	"System.h"
+	"Checker.h"
+	"SpikingGroup.h"
+
+1447006974 /home/grahams/git/auryn/src/GabaMonitor.h
+	"auryn_definitions.h"
+	"Monitor.h"
+	"System.h"
+	"Connection.h"
+	<fstream>
+	<iomanip>
+
+1447006974 /home/grahams/git/auryn/src/NmdaMonitor.h
+	"auryn_definitions.h"
+	"Monitor.h"
+	"System.h"
+	"Connection.h"
+	<fstream>
+	<iomanip>
+
+1447006974 /home/grahams/git/auryn/src/AmpaMonitor.h
+	"auryn_definitions.h"
+	"Monitor.h"
+	"System.h"
+	"Connection.h"
+	<fstream>
+	<iomanip>
+
+1447006974 /home/grahams/git/auryn/src/VoltageMonitor.h
+	"auryn_definitions.h"
+	"Monitor.h"
+	"System.h"
+	"Connection.h"
+	<fstream>
+	<iomanip>
+
+1447006974 /home/grahams/git/auryn/src/SpikeMonitor.h
+	"auryn_definitions.h"
+	"SpikingGroup.h"
+	"Monitor.h"
+	"System.h"
+	<fstream>
+
+1447006974 /home/grahams/git/auryn/src/BinarySpikeMonitor.h
+	"auryn_definitions.h"
+	"SpikingGroup.h"
+	"Monitor.h"
+	"System.h"
+	<fstream>
+
+1447006974 /home/grahams/git/auryn/src/DelayedSpikeMonitor.h
+	"auryn_definitions.h"
+	"SpikingGroup.h"
+	"Monitor.h"
+	"System.h"
+	<fstream>
+
+1447006974 /home/grahams/git/auryn/src/RealTimeMonitor.h
+	"auryn_definitions.h"
+	"Monitor.h"
+	"System.h"
+	"SpikingGroup.h"
+	<fstream>
+	<iomanip>
+	<boost/date_time/posix_time/posix_time.hpp>
+
+1447006974 /home/grahams/git/auryn/src/RateMonitor.h
+	"auryn_definitions.h"
+	"Monitor.h"
+	"System.h"
+	"SpikingGroup.h"
+	<fstream>
+	<iomanip>
+
+1447006974 /home/grahams/git/auryn/src/PopulationRateMonitor.h
+	"auryn_definitions.h"
+	"Monitor.h"
+	"System.h"
+	"SpikingGroup.h"
+	<fstream>
+	<iomanip>
+
+1447006974 /home/grahams/git/auryn/src/StateMonitor.h
+	"auryn_definitions.h"
+	"Monitor.h"
+	"System.h"
+	"Connection.h"
+	<fstream>
+	<iomanip>
+
+1447006974 /home/grahams/git/auryn/src/WeightSumMonitor.h
+	"auryn_definitions.h"
+	"Monitor.h"
+	"System.h"
+	"Connection.h"
+	<fstream>
+	<iomanip>
+
+1447006974 /home/grahams/git/auryn/src/PatternMonitor.h
+	"auryn_definitions.h"
+	"Monitor.h"
+	"System.h"
+	"SpikingGroup.h"
+	"StimulusGroup.h"
+	<fstream>
+	<iomanip>
+
+1447006974 /home/grahams/git/auryn/src/WeightPatternMonitor.h
+	"auryn_definitions.h"
+	"Monitor.h"
+	"System.h"
+	"Connection.h"
+	<fstream>
+	<iomanip>
+
+1447006974 /home/grahams/git/auryn/src/WeightStatsMonitor.h
+	"auryn_definitions.h"
+	"Monitor.h"
+	"System.h"
+	"Connection.h"
+	<fstream>
+	<iomanip>
+
+1447006974 /home/grahams/git/auryn/src/WeightMonitor.h
+	"auryn_definitions.h"
+	"Monitor.h"
+	"System.h"
+	"SparseConnection.h"
+	<fstream>
+	<iomanip>
+
+1447006974 /home/grahams/git/auryn/src/WeightMatrixMonitor.h
+	"auryn_definitions.h"
+	"Monitor.h"
+	"System.h"
+	"Connection.h"
+	<fstream>
+	<iomanip>
+
+1447006974 /home/grahams/git/auryn/src/PoissonStimulator.h
+	"auryn_definitions.h"
+	"System.h"
+	"Logger.h"
+	"Monitor.h"
+	"NeuronGroup.h"
+	<boost/random/mersenne_twister.hpp>
+	<boost/random/variate_generator.hpp>
+	<boost/random/poisson_distribution.hpp>
+
+1447006974 /home/grahams/git/auryn/src/PatternStimulator.h
+	"auryn_definitions.h"
+	"System.h"
+	"Monitor.h"
+	"NeuronGroup.h"
+	<fstream>
+	<iomanip>
+
+1447019771 source:/home/grahams/git/spinogenesis/src/SpineSTDPwdConnection.cpp
+	"SpineSTDPwdConnection.h"
+
+1447026528 /home/grahams/git/spinogenesis/include/SpineSTDPwdConnection.h
+	"auryn_definitions.h"
+	"DuplexConnection.h"
+	"EulerTrace.h"
+	"LinearTrace.h"
+	"SpikeDelay.h"
+
