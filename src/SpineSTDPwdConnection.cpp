@@ -43,7 +43,6 @@ void SpineSTDPwdConnection::init(AurynWeight lambda, AurynWeight maxweight)
 	param_mu_plus = 1.0;
 	param_mu_minus = 1.0;
 
-
 	compute_fudge_factors();
 
 	stdp_active = true;
@@ -158,10 +157,12 @@ void SpineSTDPwdConnection::propagate_backward()
 				#ifdef CODE_ACTIVATE_PREFETCHING_INTRINSICS
 				_mm_prefetch((const char *)bkw_data[c-bkw_ind+1],  _MM_HINT_NTA);
 				#endif
-
 				AurynWeight * value = bkw_data[c-bkw_ind]; // create a shortcut for readability
-			    AurynWeight fplus = pow((get_max_weight()-*value),param_mu_plus); // compute f_minus(w) function value
-			    *value += fudge_pot*fplus*tr_pre->get(*c); // update the weight
+				if (*value > get_min_weight())
+				{
+                    AurynWeight fplus = pow((get_max_weight()-*value),param_mu_plus); // compute f_minus(w) function value
+                    *value += fudge_pot*fplus*tr_pre->get(*c); // update the weight
+                }
 			}
 		}
 	}
@@ -201,6 +202,11 @@ void SpineSTDPwdConnection::set_max_weight(AurynWeight wmax)
 	compute_fudge_factors();
 }
 
+void SpineSTDPwdConnection::set_spine_birth_probability(AurynWeight sbp)
+{
+    spine_birth_probability = sbp;
+}
+
 void SpineSTDPwdConnection::propagate()
 {
 	propagate_forward();
@@ -210,5 +216,11 @@ void SpineSTDPwdConnection::propagate()
 void SpineSTDPwdConnection::evolve()
 {
 	//tr_pre->evolve();
+}
+
+void new_synapse(NeuronID pre, NeuronID post, AurynWeight weight)
+{
+    fwd_waiting.insert_newsynapse(post, pre, weight);
+    bkw_waiting.insert_newsynapse(pre, post, weight);
 }
 

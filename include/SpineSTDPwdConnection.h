@@ -59,8 +59,68 @@ private:
 	AurynWeight param_mu_plus;
 	AurynWeight param_mu_minus;
 
+    AurynWeight spine_birth_probability;
+
 	void init(AurynWeight lambda, AurynWeight maxweight);
 	void init_shortcuts();
+
+    /*! WaitingSynapse is in a linked list a node representing a new synapse to be
+    added to the weight matrix. Major and minor allows the nodes to be used for
+    both forward and backward propagation matrices. */
+	typedef struct WaitingSynapse{
+        AurynWeight weight;
+        NeuronID major; // post in fwd; pre in bkw
+        NeuronID minor;
+        WaitingSynapse *next;
+        WaitingSynapse *prev;
+        WaitingSynapse():weight(NULL),major(NULL),minor(NULL),next(NULL),prev(NULL) {}
+	} WaitingSynapse;
+
+    /*! WaitingList is a wrapper linked list with nodes of type WaitingSynapse.
+    The list is ordered by WaitingSynapse.major */
+	typedef struct WaitingList {
+        WaitingSynapse *first;
+        WaitingSynapse *last;
+        AurynLong n_waiting;
+        WaitingList():first(NULL),last(NULL),num_waiting(0) {}
+        WaitingSynapse *pop_first() {
+            WaitingSynapse *popped_ref = first;
+            first = popped_ref->next;
+            first->prev = NULL;
+            return popped_value;
+        }
+        void insert_synapse(WaitingSynapse waiting) {
+            bool inserted = false;
+            for (WaitingSynapse *curr = first; curr != NULL; curr = curr->next)
+            {
+                if (curr->major <= waiting->major) {
+                    waiting->prev = curr->prev;
+                    waiting->next = curr;
+                    curr->prev->next = curr->prev;
+                    curr->prev = waiting;
+                    if (first == curr) {
+                        first = waiting;
+                    }
+                    inserted = true;
+                    break;
+                }
+            }
+            if (!inserted)
+            {
+                last->next = waiting;
+                waiting->prev = last;
+                last = waiting;
+            }
+            n_waiting++;
+        }
+        void insert_synapse(NeuronID major, NeuronID minor, AurynWeight weight) {
+            WaitingSynapse waiting = new WaitingSynapse();
+            waiting.major = major;
+            waiting.minor = minor;
+            waiting.weight = weight;
+            insert_synapse(waiting);
+        }
+	} WaitingList;
 
 protected:
 
@@ -76,6 +136,8 @@ protected:
 	PRE_TRACE_MODEL * tr_pre;
 	DEFAULT_TRACE_MODEL * tr_post;
 
+    WaitingList fwd_waiting;
+	WaitingList bkw_waiting;
 
 	AurynWeight fudge_pot;
 	AurynWeight fudge_dep;
@@ -112,7 +174,11 @@ public:
 	void set_mu_plus(AurynWeight m);
 	void set_mu_minus(AurynWeight m);
 
+	void set_spine_birth_probability(AurynWeight sbp);
+
 	void set_max_weight(AurynWeight w);
+
+	void new_synapse(NeuronID pre, NeuronID post, AurynWeight weight);
 
 	virtual ~SpineSTDPwdConnection();
 	virtual void finalize();

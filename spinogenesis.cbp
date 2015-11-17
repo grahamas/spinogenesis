@@ -3,6 +3,8 @@
 	<FileVersion major="1" minor="6" />
 	<Project>
 		<Option title="spinogenesis" />
+		<Option makefile_is_custom="1" />
+		<Option execution_dir="build" />
 		<Option pch_mode="2" />
 		<Option compiler="gcc" />
 		<Build>
@@ -31,6 +33,11 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
+		<Unit filename="include/SpineSTDPwdConnection.h" />
+		<Unit filename="src/SpineSTDPwdConnection.cpp" />
+		<Unit filename="src/sim_brunel.cpp" />
+		<Unit filename="src/sim_poisson.cpp" />
+		<Unit filename="src/sim_spines.cpp" />
 		<Extensions>
 			<code_completion />
 			<debugger />
